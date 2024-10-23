@@ -1,0 +1,306 @@
+body {
+    font-family: 'Dancing Script', cursive, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fdf4f1;
+    color: #333;
+}
+.header {
+    text-align: center;
+    background-image: url('https://placehold.co/100x150'); /* Hình nền */
+    background-size: cover;
+    background-position: center;
+    padding: 120px 20px;
+    color: white;
+    font-family: 'Great Vibes', cursive;
+}
+.header h1 {
+    font-size: 64px;
+    margin: 0;
+    white-space: nowrap; /* Ngăn chặn xuống dòng */
+}
+.header p {
+    font-size: 24px;
+    margin: 5px 0;
+}
+.header img {
+    margin-top: 30px;
+    width: 100%; /* Chiều rộng 100% để phù hợp với không gian */
+    height: auto; /* Chiều cao tự động để giữ tỷ lệ hình ảnh */
+    max-width: 400px; /* Giới hạn chiều rộng tối đa cho màn hình lớn */
+    border-radius: 10px;
+}
+
+.invitation {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fce4e4;
+}
+.invitation .invite-text {
+    background-color: white;
+    padding: 30px;
+    display: inline-block;
+    border-radius: 10px;
+    font-size: 20px;
+    width: 80%;
+}
+.invite-text h2 {
+    color: #d47a81;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+.invite-text p {
+    margin: 5px 0;
+}
+.invite-text .names {
+    font-family: 'Great Vibes', cursive;
+    font-size: 28px;
+    color: #d47a81;
+}
+
+.bride-groom {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 50px 20px;
+    text-align: center;
+}
+.bride-groom .profile {
+    flex-basis: 40%;
+}
+.bride-groom img {
+    width: 100%; /* Chiều rộng 100% */
+    height: auto; /* Chiều cao tự động */
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+.bride-groom .name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.wedding-details {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9e6e6;
+}
+.wedding-details h2 {
+    color: #d47a81;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+.wedding-details p {
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 50px 20px;
+}
+.photo-gallery img {
+    width: 100%; /* Chiều rộng 100% */
+    height: auto; /* Chiều cao tự động */
+    border-radius: 10px;
+}
+
+.love-story {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fdf4f1;
+}
+.love-story h2 {
+    color: #d47a81;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+.love-story .story-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+.story {
+    width: 30%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+}
+.story img {
+    width: 100%; /* Chiều rộng 100% */
+    height: auto; /* Chiều cao tự động */
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.footer {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+}
+.footer h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.footer p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.qrcode-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+.qrcode-section div {
+    text-align: center;
+}
+.qrcode-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.qrcode-section p {
+    margin: 5px 0;
+}
+.qrcode-section img {
+    width: 150px;
+    height: auto;
+    margin-top: 10px;
+}
+.couple-image img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Thêm media query để tối ưu hóa cho màn hình nhỏ */
+@media (max-width: 768px) {
+    .photo-gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 cột trên màn hình nhỏ */
+    }
+    .story-container {
+        flex-direction: column; /* Chuyển sang hướng cột cho các câu chuyện */
+        align-items: center; /* Căn giữa các câu chuyện */
+    }
+    .story {
+        width: 90%; /* Chiều rộng câu chuyện trên màn hình nhỏ */
+    }
+    .header h1 {
+        font-size: 32px; /* Giảm kích thước phông chữ trên màn hình nhỏ */
+    }
+    .qrcode-section {
+        flex-direction: column;
+    }
+    .couple-image img {
+        width: 100%;
+    }
+}
+
+.photo-gallery img, .bride-groom img, .story img {
+    transition: transform 0.3s ease; /* Hiệu ứng chuyển động cho ảnh */
+}
+
+.photo-gallery img:hover, .bride-groom img:hover, .story img:hover {
+    transform: scale(1.05); /* Phóng to nhẹ khi hover */
+}
+
+.invitation, .wedding-details, .love-story, .footer {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.invitation {
+    animation-delay: 0.5s;
+}
+
+.wedding-details {
+    animation-delay: 1s;
+}
+
+.love-story {
+    animation-delay: 1.5s;
+}
+
+.footer {
+    animation-delay: 2s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.footer {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+}
+.footer h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.footer p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.qrcode-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+.qrcode-section div {
+    text-align: center;
+}
+.qrcode-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.qrcode-section p {
+    margin: 5px 0;
+}
+.qrcode-section img {
+    width: 150px;
+    height: auto;
+    margin-top: 10px;
+}
+.couple-image img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+}
+@media (max-width: 768px) {
+    .qrcode-section {
+        flex-direction: column;
+    }
+    .couple-image {
+        order: -1;
+    }
+    .bride, .groom {
+        display: inline-block;
+        width: 45%;
+    }
+    .couple-image img {
+        width: 80%;
+    }
+}
