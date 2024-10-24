@@ -7,21 +7,24 @@ body {
 }
 .header {
     text-align: center;
-    background-image: url('img/nen2.webp'); /* Hình nền */
+    background-image: url('img/bgwd.jpg'); /* Hình nền */
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     padding: 120px 20px;
-    color: rgb(240, 55, 55);
+    color: rgb(115, 69, 69);
     font-family: 'Great Vibes', cursive;
 }
 .header h1 {
     font-size: 64px;
+    color: rgb(243, 0, 0);
     margin: 0;
     white-space: nowrap; /* Ngăn chặn xuống dòng */
 }
 .header p {
     font-size: 24px;
     margin: 5px 0;
+   font-family: 'Times New Roman', Times, serif;
 }
 .header img {
     margin-top: 30px;
@@ -46,18 +49,19 @@ body {
     display: inline-block;
     border-radius: 10px;
     font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
     width: 80%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
 }
 
-.invite-text h2 {
+.invite-text h3 {
     color: #333;
-    font-size: 32px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .invite-text p {
-    margin: 5px 0;
+    margin: 20px 0;
     font-size: 18px;
 }
 
@@ -90,7 +94,27 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 50px 20px;
-    background-color: #fff;
+    background-image: url('img/bg1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.bride-groom::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 1;
+}
+
+.bride-groom > * {
+    position: relative;
+    z-index: 2;
 }
 
 .profile {
@@ -113,14 +137,17 @@ body {
 .profile h2 {
     font-family: 'Great Vibes', cursive;
     font-size: 40px;
-    color: #333;
+    color: #c51515;
     margin-bottom: 10px;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
 }
 
 .profile p {
     font-size: 20px;
-    color: #505050;
+    color: #110f0f;
     line-height: 1.5;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
     margin: 0 20px;
 }
 
@@ -249,7 +276,7 @@ body {
 }
 .photo-gallery img {
     width: 90%;
-    height: 500px; /* Đặt chiều cao cụ thể */
+    height: 400px; /* Đặt chiều cao cụ thể */
     object-fit: cover; /* Cắt ảnh để vừa khung */
     border-radius: 15px;
     transition: transform 0.3s ease;
@@ -280,6 +307,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     text-align: left;
+    font-family: 'Times New Roman', Times, serif;
 }
 .story img {
     width: 100%; /* Chiều rộng 100% */
@@ -291,6 +319,7 @@ body {
 .footer {
     text-align: center;
     padding: 50px 20px;
+    font-family: 'Times New Roman', Times, serif;
     background-color: #fff;
 }
 .footer h2 {
@@ -349,11 +378,23 @@ body {
         height: auto;
     }
     .invitation .invite-text {
-        width: 90%; /* Tăng chiều rộng để phù hợp hơn */
+        width: 90%; /* Tăng chiều rộng đ phù hợp hơn */
         padding: 20px; /* Giảm padding */
     }
     .photo-gallery {
-        grid-template-columns: 1fr; /* 1 cột trên màn hình nhỏ */
+        grid-template-columns: 1fr; /* Chuyển sang 1 cột trên màn hình nhỏ */
+        gap: 15px; /* Khoảng cách giữa các ảnh */
+    }
+    .photo-gallery img {
+        width: 100%; /* Chiều rộng 100% để ảnh chiếm toàn bộ không gian cột */
+        height: 200px; /* Đặt chiều cao cụ thể để giữ tỷ lệ nhất quán */
+        object-fit: cover; /* Cắt ảnh để vừa khung */
+        border-radius: 10px; /* Giảm độ bo tròn */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Thêm hiệu ứng chuyển động */
+    }
+    .photo-gallery img:hover {
+        transform: scale(1.05); /* Phóng to nhẹ khi hover */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Thêm bóng đổ khi hover */
     }
     .story-container {
         flex-direction: column; /* Chuyển sang hướng cột cho các câu chuyện */
@@ -532,11 +573,48 @@ body {
 .gallery-subtitle {
     color: #333;
     font-size: 24px;
-   
+    font-family: 'Times New Roman', Times, serif;
     margin-bottom: 30px;
 }
 
 .gallery-header {
     text-align: center;
     margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+    .photo-gallery {
+        grid-template-columns: repeat(2, 1fr); /* Chuyển sang 2 cột trên màn hình nhỏ */
+        gap: 10px; /* Giảm khoảng cách giữa các ảnh */
+    }
+    .photo-gallery img {
+        width: 100%; /* Chiều rộng 100% để ảnh chiếm toàn bộ không gian cột */
+        height: auto; /* Chiều cao tự động để giữ tỷ lệ ảnh */
+        object-fit: cover; /* Cắt ảnh để vừa khung */
+        border-radius: 10px; /* Giảm độ bo tròn */
+    }
+}
+
+/* Cải thiện giao diện cho phần câu chuyện tình yêu trên màn hình nhỏ */
+@media (max-width: 768px) {
+    .love-story .story-container {
+        flex-direction: column; /* Chuyển sang hướng cột */
+        align-items: center; /* Căn giữa các câu chuyện */
+        padding: 10px; /* Thêm padding để tạo khoảng cách */
+    }
+    .story {
+        width: 90%; /* Tăng chiều rộng để phù hợp với màn hình nhỏ */
+        margin-bottom: 20px; /* Thêm khoảng cách giữa các câu chuyện */
+        text-align: center; /* Căn giữa văn bản */
+    }
+    .story img {
+        width: 100%; /* Chiều rộng 100% để ảnh chiếm toàn bộ không gian cột */
+        max-width: 300px; /* Giới hạn chiều rộng tối đa */
+        height: auto; /* Chiều cao tự động */
+        border-radius: 10px; /* Giữ độ bo tròn */
+    }
+    .story p {
+        padding: 10px; /* Thêm padding cho văn bản */
+        font-size: 16px; /* Giảm kích thước phông chữ */
+    }
 }
