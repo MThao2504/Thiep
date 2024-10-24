@@ -8,568 +8,101 @@
     <!-- Favicon -->
      <link href="img/tải xuống.jfif" rel="icon">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <style>
+        /* Thêm CSS cho navbar */
+        .navbar, .navbar-toggle {
+            display: flex;
+            justify-content: center;
+            background-color: #fdf4f1;
+            padding: 10px 0;
+            z-index: 1000;
+            flex-wrap: wrap;
+            position: sticky; /* Sử dụng thuộc tính này để navbar di chuyển theo */
+            top: 0; /* Đặt vị trí của navbar ở đầu trang khi cuộn đến */
+            width: 100%; /* Đảm bảo navbar chiếm toàn bộ chiều rộng */
+        }
+        .navbar a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+        .navbar a:hover {
+            color: #d47a81;
+        }
+        /* Thêm CSS cho cuộn mượt mà */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Ẩn nút navbar-toggle và close-btn trên màn hình lớn */
+        .navbar-toggle, .navbar .close-btn {
+            display: none; /* Ẩn nút trên màn hình lớn */
+        }
+
+        /* Media query cho màn hình nhỏ */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+                display: none; /* Ẩn navbar mặc định */
+            }
+            .navbar.active {
+                display: flex; /* Hiển thị navbar khi có class active */
+            }
+            .navbar-toggle {
+                display: block; /* Hiển thị nút trên màn hình nhỏ */
+                cursor: pointer;
+                margin: 10px;
+            }
+            .navbar .close-btn {
+                display: none; /* Ẩn nút close mặc định */
+            }
+            .navbar.active .close-btn {
+                display: block; /* Hiển thị nút close khi navbar mở */
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                font-size: 24px;
+                cursor: pointer;
+            }
+        }
+
+       
+    </style>
 </head>
-<!-- <style>
-body {
-    font-family: 'Dancing Script', cursive, Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #fdf4f1;
-    color: #333;
-}
-.header {
-    text-align: center;
-    background-image: url('img/nen2.webp'); /* Hình nền */
-    background-size: cover;
-    background-position: center;
-    padding: 120px 20px;
-    color: rgb(240, 55, 55);
-    font-family: 'Great Vibes', cursive;
-}
-.header h1 {
-    font-size: 64px;
-    margin: 0;
-    white-space: nowrap; /* Ngăn chặn xuống dòng */
-}
-.header p {
-    font-size: 24px;
-    margin: 5px 0;
-}
-.header img {
-    margin-top: 30px;
-    width: 100%; /* Chiều rộng 100% để phù hợp với không gian */
-    height: auto; /* Chiều cao tự động để giữ tỷ lệ hình ảnh */
-    max-width: 400px; /* Giới hạn chiều rộng tối đa cho màn hình lớn */
-    border-radius: 10px;
-}
-
-.invitation {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #fdf4f1;
-    border: 1px solid #d47a81;
-    border-radius: 10px;
-    margin: 20px;
-}
-
-.invitation .invite-text {
-    background-color: #fff;
-    padding: 30px;
-    display: inline-block;
-    border-radius: 10px;
-    font-size: 20px;
-    width: 80%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.invite-text h2 {
-    color: #333;
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-
-.invite-text p {
-    margin: 5px 0;
-    font-size: 18px;
-}
-
-.invite-text .names {
-    font-family: 'Great Vibes', cursive;
-    font-size: 36px;
-    color: #d47a81;
-    margin: 10px 0;
-}
-
-.family-info {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.family h3 {
-    color: #d47a81;
-    font-size: 20px;
-    margin-bottom: 5px;
-}
-
-.family p {
-    margin: 0;
-    font-size: 16px;
-}
-
-.bride-groom {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 50px 20px;
-    background-color: #fff;
-}
-
-.profile {
-    display: flex;
-    align-items: center;
-    margin-bottom: 50px;
-    position: relative;
-    width: 70%;
-}
-
-.profile img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 5px solid #f8f8f8;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 0 20px;
-}
-
-.profile h2 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 40px;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.profile p {
-    font-size: 20px;
-    color: #505050;
-    line-height: 1.5;
-    margin: 0 20px;
-}
-
-.profile:nth-child(odd) {
-    flex-direction: row-reverse;
-}
-
-.bride-groom::before, .bride-groom::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 200px;
-   
-    z-index: -1;
-}
-
-.bride-groom::before {
-    top: 0;
-    left: 0;
-}
-
-.bride-groom::after {
-    bottom: 0;
-    right: 0;
-}
-
-.wedding-details {
-    display: flex;
-    flex-direction: column; /* Chuyển sang hướng cột cho màn hình nhỏ */
-    align-items: center;
-    padding: 20px;
-    background-color: #fef2f2;
-}
-
-.event, .timeline {
-    width: 100%; /* Chiều rộng 100% cho màn hình nhỏ */
-    margin-bottom: 20px; /* Thêm khoảng cách giữa các phần */
-}
-
-.event-detail {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    text-align: center; /* Căn giữa văn bản */
-}
-
-.map iframe {
-    width: 100%; /* Chiều rộng 100% cho iframe */
-    height: auto; /* Chiều cao tự động */
-}
-
-/* Media query cho màn hình lớn hơn */
-@media (min-width: 768px) {
-    .wedding-details {
-        flex-direction: row; /* Chuyển sang hướng hàng cho màn hình lớn */
-        justify-content: space-between;
-    }
-
-    .event, .timeline {
-        width: 48%; /* Chia đều không gian cho hai phần */
-    }
-}
-
-.event {
-    flex: 1;
-    text-align: center;
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-}
-
-.wedding-image img {
-    width: 200px;
-    border-radius: 50%;
-}
-
-.timeline {
-    flex: 1;
-    margin-left: 20px;
-}
-
-.event-detail {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.event-detail h3 {
-    font-size: 20px;
-    color: red;
-}
-
-.map img {
-    width: 100%;
-    border-radius: 10px;
-    margin-top: 10px;
-}
-
-.map a {
-    display: inline-block;
-    margin-top: 10px;
-    text-decoration: none;
-    color: #007BFF;
-}
-
-.photo-gallery {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 cột */
-    gap: 20px;
-    padding: 50px 20px;
-    text-align: center;
-}
-
-.gallery-title {
-    margin-bottom: 20px;
-    color: #d47a81;
-    font-size: 32px;
-}
-
-.photo-gallery h2 {
-    color: #d47a81;
-    font-size: 32px;
-    margin-bottom: 20px;
-}
-.photo-gallery img {
-    width: 90%;
-    height: 500px; /* Đặt chiều cao cụ thể */
-    object-fit: cover; /* Cắt ảnh để vừa khung */
-    border-radius: 15px;
-    transition: transform 0.3s ease;
-}
-
-.photo-gallery img:hover {
-    transform: scale(1.05); /* Phóng to nhẹ khi hover */
-}
-
-.love-story {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #fdf4f1;
-}
-.love-story h2 {
-    color: #d47a81;
-    font-size: 32px;
-    margin-bottom: 30px;
-}
-.love-story .story-container {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-}
-.story {
-    width: 30%;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: left;
-}
-.story img {
-    width: 100%; /* Chiều rộng 100% */
-    height: auto; /* Chiều cao tự động */
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.footer {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #fff;
-}
-.footer h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-.footer p {
-    font-size: 16px;
-    margin-bottom: 20px;
-}
-.qrcode-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    flex-wrap: wrap;
-}
-.qrcode-section div {
-    text-align: center;
-}
-.qrcode-section h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-.qrcode-section p {
-    margin: 5px 0;
-}
-.qrcode-section img {
-    width: 150px;
-    height: auto;
-    margin-top: 10px;
-}
-.couple-image img {
-    width: 400px;
-    height: auto;
-    border-radius: 10px;
-}
-
-/* Thêm media query để tối ưu hóa cho màn hình nhỏ */
-@media (max-width: 768px) {
-    .header {
-        background-size: cover; /* Đảm bảo hình nền phủ đầy */
-        background-position: center; /* Căn giữa hình nền */
-        background-repeat: no-repeat; /* Ngăn chặn lặp lại hình nền */
-        padding: 60px 10px; /* Giảm padding */
-    }
-    .header h1 {
-        font-size: 24px; /* Giảm kích thước phông chữ */
-        margin-bottom: 10px; /* Thêm khoảng cách dưới */
-    }
-    .header p {
-        font-size: 18px; /* Giảm kích thước phông chữ */
-    }
-    .header img {
-        max-width: 80%; /* Giảm kích thước ảnh */
-        height: auto;
-    }
-    .invitation .invite-text {
-        width: 90%; /* Tăng chiều rộng để phù hợp hơn */
-        padding: 20px; /* Giảm padding */
-    }
-    .photo-gallery {
-        grid-template-columns: 1fr; /* 1 cột trên màn hình nhỏ */
-    }
-    .story-container {
-        flex-direction: column; /* Chuyển sang hướng cột cho các câu chuyện */
-        align-items: center; /* Căn giữa các câu chuyện */
-    }
-    .story {
-        width: 100%; /* Chiều rộng câu chuyện trên màn hình nhỏ */
-        margin-bottom: 20px; /* Thêm khoảng cách giữa các câu chuyện */
-    }
-    .header h1 {
-        font-size: 28px; /* Giảm kích thước phông chữ trên màn hình nhỏ */
-    }
-    .qrcode-section {
-        flex-direction: column;
-        align-items: center; /* Căn giữa các phần tử */
-    }
-    .couple-image img {
-        width: 90%; /* Giảm kích thước ảnh */
-    }
-    .bride-groom {
-        flex-direction: column; /* Chuyển sang hướng cột */
-        align-items: center; /* Căn giữa các phần tử */
-        padding: 20px; /* Giảm padding */
-    }
-    .profile {
-        width: 90%; /* Chiều rộng profile trên màn hình nhỏ */
-        margin-bottom: 20px; /* Giảm khoảng cách giữa các profile */
-        text-align: center; /* Căn giữa văn bản */
-    }
-    .profile img {
-        width: 100px; /* Giảm kích thước ảnh */
-        height: 100px;
-    }
-    .profile h2 {
-        font-size: 24px; /* Giảm kích thước phông chữ */
-    }
-    .profile p {
-        font-size: 16px; /* Giảm kích thước phông chữ */
-        line-height: 1.4; /* Điều chỉnh khoảng cách dòng */
-    }
-    .photo-gallery img, .bride-groom img, .story img {
-        display: block;
-        margin: 0 auto; /* Căn giữa hình ảnh */
-    }
-    .couple-image img {
-        display: block;
-        margin: 0 auto; /* Căn giữa hình ảnh */
-    }
-    .profile img {
-        display: block;
-        margin: 0 auto; /* Căn giữa hình ảnh */
-    }
-    .photo-gallery img {
-        object-fit: contain; /* Hiển thị toàn bộ ảnh */
-        width: 100%; /* Chiều rộng 100% */
-        height: auto; /* Chiều cao tự động */
-    }
-}
-
-.photo-gallery img, .bride-groom img, .story img {
-    transition: transform 0.3s ease; /* Hiệu ứng chuyển động cho ảnh */
-}
-
-.photo-gallery img:hover, .bride-groom img:hover, .story img:hover {
-    transform: scale(1.05); /* Phóng to nhẹ khi hover */
-}
-
-.invitation, .wedding-details, .love-story, .footer {
-    opacity: 0;
-    animation: fadeIn 1s ease-out forwards;
-}
-
-.invitation {
-    animation-delay: 0.5s;
-}
-
-.wedding-details {
-    animation-delay: 1s;
-}
-
-.love-story {
-    animation-delay: 1.5s;
-}
-
-.footer {
-    animation-delay: 2s;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.footer {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #fff;
-}
-.footer h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-.footer p {
-    font-size: 16px;
-    margin-bottom: 20px;
-}
-.qrcode-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    flex-wrap: wrap;
-}
-.qrcode-section div {
-    text-align: center;
-}
-.qrcode-section h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-.qrcode-section p {
-    margin: 5px 0;
-}
-.qrcode-section img {
-    width: 150px;
-    height: auto;
-    margin-top: 10px;
-}
-.couple-image img {
-    width: 300px;
-    height: auto;
-    border-radius: 10px;
-}
-@media (max-width: 768px) {
-    .qrcode-section {
-        flex-direction: column;
-    }
-    .couple-image {
-        order: -1;
-    }
-    .bride, .groom {
-        display: inline-block;
-        width: 45%;
-    }
-    .couple-image img {
-        width: 80%;
-    }
-}
-
-.photo-gallery {
-    text-align: center;
-}
-
-.gallery-title {
-    color: #d47a81;
-    font-size: 32px;
- 
-    margin-bottom: 10px;
-}
-
-.gallery-subtitle {
-    color: #333;
-    font-size: 24px;
-   
-    margin-bottom: 30px;
-}
-
-.gallery-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-</style> -->
 <body>
+    <!-- Nút để mở/đóng navbar -->
+    <div class="navbar-toggle">☰ Menu</div>
+
+    <!-- Navbar Section -->
+    <div class="navbar">
+        <div class="close-btn">✖</div> <!-- Nút Close -->
+        <a href="#header">Trang Chủ</a>
+        <a href="#invitation">Lời Mời</a>
+        <a href="#bride-groom">Cô Dâu & Chú Rể</a>
+        <a href="#gallery-header">Thư Viện Ảnh</a>
+        <a href="#love-story">Câu Chuyện Tình Yêu</a>
+        <a href="#wedding-details">Chi Tiết Lễ Cưới</a>
+        <a href="#footer">Lời Chúc</a>
+    </div>
 
     <!-- Header Section -->
-    <div class="header">
+    <div id="header" class="header">
         <h1>
             <span>Thị A</span> <span style="color: #d47a81;">&#10084;</span> <span>Văn B</span>
         </h1>
         <p>Trân trọng kính mời quý vị đến dự lễ cưới của chúng tôi</p>
-        <p>Lễ cưới được tổ chức vào ngày 14 tháng 3 năm 2023</p>
+        <p>Lễ cưới được tổ chức vào<br/> Ngày 14 tháng 3 năm 2023</p>
         <img src="https://placehold.co/300x200" alt="Cp đôi Thị A & Văn B">
     </div>
 
     <!-- Invitation Section -->
-    <div class="invitation">
+    <div id="invitation" class="invitation">
         <div class="invite-text">
-            <h2>TRÂN TRỌNG KÍNH MỜI</h2>
+            <h3>TRÂN TRỌNG KÍNH MỜI</h3>
             <p><span style="color: red;">Bạn(Anh/Chị)</span> cùng người thân thương</p>
             <p>TỚI THAM DỰ LỄ THÀNH HÔN CỦA CHÚNG MÌNH</p>
             <p class="names">Văn B <span style="color: #d47a81;">&#10084;</span> Thị A</p>
@@ -592,11 +125,10 @@ body {
     </div>
 
     <!-- Bride and Groom Section -->
-    <div class="bride-groom" style="background-image: url('img/nen1_1.png'); /* Thay thế bằng URL hình hoa */
-    background-size: 100% 100%; background-position: center; background-repeat: no-repeat;">
+    <div id="bride-groom" class="bride-groom">
         <div class="profile">
             <img src="https://placehold.co/150x150" alt="Thị A">
-            <h2>Thị A</h2>
+            <h2>Thị Thanh</h2>
             <p>“Không ngờ được” đó là câu nói tôi hay nói từ khi chúng tôi bắt đầu yêu và giờ thì... chúng tôi kết hôn rồi. Trải qua nhiều biến cố trong chuyện tình của chúng tôi khá dè dt khi lại 1 lần nữa bước chân vào hôn nhân. Và rồi... “Chốt thôi” ♥♥</p>
         </div>
         <div class="profile">
@@ -608,7 +140,8 @@ body {
 
    
     
-      <div class="gallery-header">
+    
+      <div class="gallery-header" id="gallery-header">
         <h2 class="gallery-title">KHOẢNH KHẮC NGỌT NGÀO</h2>
         <p class="gallery-subtitle">Mình cùng bên nhau, những khoảnh khắc thăng hoa của tình yêu! Cảm ơn em đã xuất hiện trong cuộc sống của anh</p>
     </div>
@@ -625,9 +158,8 @@ body {
         <img src="https://www.vietnamworks.com/hrinsider/wp-content/uploads/2023/12/hinh-nen-3d-thien-nhien-001.jpg" alt="Ảnh 8">
     </div>
 
-    <!-- Love Story
     <!-- Love Story Section -->
-    <div class="love-story">
+    <div id="love-story" class="love-story">
         <h2>CÂU CHUYỆN TÌNH YÊU CỦA CHÚ RỂ VÀ CÔ DÂU</h2>
         <div class="story-container">
             <div class="story">
@@ -636,11 +168,13 @@ body {
             </div>
             <div class="story">
                 <img src="https://placehold.co/300x200" alt="Câu chuyện 2">
-                <p>Chúng tôi đã cùng nhau trải qua nhiều khoảnh khắc đáng nhớ, từ những buổi hẹn hò ngọt ngào đến những chuyến du lịch thú v.</p>
+                <p>Chúng tôi đã cùng nhau trải qua nhiều khoảnh khắc đáng nhớ, từ những buổi hẹn hò ngọt ngào đn những chuyến du lịch thú vị.</p>
             </div>
         </div>
     </div>
-    <div class="wedding-details">
+
+    <!-- Wedding Details Section -->
+    <div id="wedding-details" class="wedding-details">
         <div class="event">
             <h2>Chúng mình cưới</h2>
             <p>Một lời chúc của bạn chắc chắn sẽ làm cho đám cưới của chúng tôi có thêm một niềm hạnh phúc</p>
@@ -669,10 +203,11 @@ body {
             </div>
         </div>
     </div>
+
     <!-- Footer Section -->
-    <div class="footer">
+    <div id="footer" class="footer">
         <h2>GỬI LỜI CHÚC ĐẾN CÔ DÂU CHÚ RỂ</h2>
-        <p>Mình rất muốn được chụp chung với bạn những tấm hình kỷ niệm...</p>
+        <p>Mình rất muốn được chụp chung với bạn những tấm hình k niệm vì vậy hãy đến sớm hơn một chút bạn yêu nhé ! Đám cưới của chúng mình sẽ trọn vẹn hơn khi có bạn thêm lời chúc phúc và sự hiện diện của các bạn.</p>
         <div class="qrcode-section">
             <div class="bride">
                 <h3>CÔ DÂU</h3>
@@ -693,6 +228,37 @@ body {
             </div>
         </div>
     </div>
+
+    <script>
+        // JavaScript để xử lý sự kiện nhấp chuột
+        document.querySelectorAll('.navbar a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+                // Đóng navbar sau khi nhấp vào một liên kết
+                if (window.innerWidth <= 768) {
+                    navbar.classList.remove('active');
+                }
+            });
+        });
+
+        // JavaScript để mở/đóng navbar trên màn hình nhỏ
+        const navbarToggle = document.querySelector('.navbar-toggle');
+        const navbar = document.querySelector('.navbar');
+        const closeBtn = document.querySelector('.close-btn');
+
+        navbarToggle.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            navbar.classList.remove('active');
+        });
+    </script>
 
 </body>
 </html>
