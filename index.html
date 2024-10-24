@@ -9,6 +9,457 @@
      <link href="img/tải xuống.jfif" rel="icon">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
+<!-- <style>body {
+    font-family: 'Dancing Script', cursive, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fdf4f1;
+    color: #333;
+}
+.header {
+    text-align: center;
+    background-image: url('img/nen2.webp'); /* Hình nền */
+    background-size: cover;
+    background-position: center;
+    padding: 120px 20px;
+    color: rgb(240, 55, 55);
+    font-family: 'Great Vibes', cursive;
+}
+.header h1 {
+    font-size: 64px;
+    margin: 0;
+    white-space: nowrap; /* Ngăn chặn xuống dòng */
+}
+.header p {
+    font-size: 24px;
+    margin: 5px 0;
+}
+.header img {
+    margin-top: 30px;
+    width: 100%; /* Chiều rộng 100% để phù hợp với không gian */
+    height: auto; /* Chiều cao tự động để giữ tỷ lệ hình ảnh */
+    max-width: 400px; /* Giới hạn chiều rộng tối đa cho màn hình lớn */
+    border-radius: 10px;
+}
+
+.invitation {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fce4e4;
+}
+.invitation .invite-text {
+    background-color: white;
+    padding: 30px;
+    display: inline-block;
+    border-radius: 10px;
+    font-size: 20px;
+    width: 80%;
+}
+.invite-text h2 {
+    color: #d47a81;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+.invite-text p {
+    margin: 5px 0;
+}
+.invite-text .names {
+    font-family: 'Great Vibes', cursive;
+    font-size: 28px;
+    color: #d47a81;
+}
+
+.bride-groom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #fff;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    position: relative;
+    width: 70%;
+}
+
+.profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #f8f8f8;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 20px;
+}
+
+.profile h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 40px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.profile p {
+    font-size: 20px;
+    color: #505050;
+    line-height: 1.5;
+    margin: 0 20px;
+}
+
+.profile:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.bride-groom::before, .bride-groom::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 200px;
+   
+    z-index: -1;
+}
+
+.bride-groom::before {
+    top: 0;
+    left: 0;
+}
+
+.bride-groom::after {
+    bottom: 0;
+    right: 0;
+}
+
+.wedding-details {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9e6e6;
+}
+.wedding-details h2 {
+    color: #d47a81;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+.wedding-details p {
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cột */
+    gap: 20px;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.gallery-title {
+    margin-bottom: 20px;
+    color: #d47a81;
+    font-size: 32px;
+}
+
+.photo-gallery h2 {
+    color: #d47a81;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+.photo-gallery img {
+    width: 90%;
+    height: 500px; /* Đặt chiều cao cụ thể */
+    object-fit: cover; /* Cắt ảnh để vừa khung */
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.photo-gallery img:hover {
+    transform: scale(1.05); /* Phóng to nhẹ khi hover */
+}
+
+.love-story {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fdf4f1;
+}
+.love-story h2 {
+    color: #d47a81;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+.love-story .story-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+.story {
+    width: 30%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+}
+.story img {
+    width: 100%; /* Chiều rộng 100% */
+    height: auto; /* Chiều cao tự động */
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.footer {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+}
+.footer h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.footer p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.qrcode-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+.qrcode-section div {
+    text-align: center;
+}
+.qrcode-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.qrcode-section p {
+    margin: 5px 0;
+}
+.qrcode-section img {
+    width: 150px;
+    height: auto;
+    margin-top: 10px;
+}
+.couple-image img {
+    width: 400px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Thêm media query để tối ưu hóa cho màn hình nhỏ */
+@media (max-width: 768px) {
+    .header {
+        background-size: cover; /* Đảm bảo hình nền phủ đầy */
+        background-position: center; /* Căn giữa hình nền */
+        background-repeat: no-repeat; /* Ngăn chặn lặp lại hình nền */
+        padding: 60px 10px; /* Giảm padding */
+    }
+    .header h1 {
+        font-size: 24px; /* Giảm kích thước phông chữ */
+        margin-bottom: 10px; /* Thêm khoảng cách dưới */
+    }
+    .header p {
+        font-size: 18px; /* Giảm kích thước phông chữ */
+    }
+    .header img {
+        max-width: 80%; /* Giảm kích thước ảnh */
+        height: auto;
+    }
+    .invitation .invite-text {
+        width: 90%; /* Tăng chiều rộng để phù hợp hơn */
+        padding: 20px; /* Giảm padding */
+    }
+    .photo-gallery {
+        grid-template-columns: 1fr; /* 1 cột trên màn hình nhỏ */
+    }
+    .story-container {
+        flex-direction: column; /* Chuyển sang hướng cột cho các câu chuyện */
+        align-items: center; /* Căn giữa các câu chuyện */
+    }
+    .story {
+        width: 100%; /* Chiều rộng câu chuyện trên màn hình nhỏ */
+        margin-bottom: 20px; /* Thêm khoảng cách giữa các câu chuyện */
+    }
+    .header h1 {
+        font-size: 28px; /* Giảm kích thước phông chữ trên màn hình nhỏ */
+    }
+    .qrcode-section {
+        flex-direction: column;
+        align-items: center; /* Căn giữa các phần tử */
+    }
+    .couple-image img {
+        width: 90%; /* Giảm kích thước ảnh */
+    }
+    .bride-groom {
+        flex-direction: column; /* Chuyển sang hướng cột */
+        align-items: center; /* Căn giữa các phần tử */
+        padding: 20px; /* Giảm padding */
+    }
+    .profile {
+        width: 90%; /* Chiều rộng profile trên màn hình nhỏ */
+        margin-bottom: 20px; /* Giảm khoảng cách giữa các profile */
+        text-align: center; /* Căn giữa văn bản */
+    }
+    .profile img {
+        width: 100px; /* Giảm kích thước ảnh */
+        height: 100px;
+    }
+    .profile h2 {
+        font-size: 24px; /* Giảm kích thước phông chữ */
+    }
+    .profile p {
+        font-size: 16px; /* Giảm kích thước phông chữ */
+        line-height: 1.4; /* Điều chỉnh khoảng cách dòng */
+    }
+    .photo-gallery img, .bride-groom img, .story img {
+        display: block;
+        margin: 0 auto; /* Căn giữa hình ảnh */
+    }
+    .couple-image img {
+        display: block;
+        margin: 0 auto; /* Căn giữa hình ảnh */
+    }
+    .profile img {
+        display: block;
+        margin: 0 auto; /* Căn giữa hình ảnh */
+    }
+    .photo-gallery img {
+        object-fit: contain; /* Hiển thị toàn bộ ảnh */
+        width: 100%; /* Chiều rộng 100% */
+        height: auto; /* Chiều cao tự động */
+    }
+}
+
+.photo-gallery img, .bride-groom img, .story img {
+    transition: transform 0.3s ease; /* Hiệu ứng chuyển động cho ảnh */
+}
+
+.photo-gallery img:hover, .bride-groom img:hover, .story img:hover {
+    transform: scale(1.05); /* Phóng to nhẹ khi hover */
+}
+
+.invitation, .wedding-details, .love-story, .footer {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.invitation {
+    animation-delay: 0.5s;
+}
+
+.wedding-details {
+    animation-delay: 1s;
+}
+
+.love-story {
+    animation-delay: 1.5s;
+}
+
+.footer {
+    animation-delay: 2s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.footer {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+}
+.footer h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.footer p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.qrcode-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+.qrcode-section div {
+    text-align: center;
+}
+.qrcode-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.qrcode-section p {
+    margin: 5px 0;
+}
+.qrcode-section img {
+    width: 150px;
+    height: auto;
+    margin-top: 10px;
+}
+.couple-image img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+}
+@media (max-width: 768px) {
+    .qrcode-section {
+        flex-direction: column;
+    }
+    .couple-image {
+        order: -1;
+    }
+    .bride, .groom {
+        display: inline-block;
+        width: 45%;
+    }
+    .couple-image img {
+        width: 80%;
+    }
+}
+
+.photo-gallery {
+    text-align: center;
+}
+
+.gallery-title {
+    color: #d47a81;
+    font-size: 32px;
+ 
+    margin-bottom: 10px;
+}
+
+.gallery-subtitle {
+    color: #333;
+    font-size: 24px;
+   
+    margin-bottom: 30px;
+}
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+</style> -->
 <body>
 
     <!-- Header Section -->
@@ -18,7 +469,7 @@
         </h1>
         <p>Trân trọng kính mời quý vị đến dự lễ cưới của chúng tôi</p>
         <p>Lễ cưới được tổ chức vào ngày 14 tháng 3 năm 2023</p>
-        <img src="https://placehold.co/300x200" alt="Cp đôi Kim Trinh & Thanh Tùng">
+        <img src="https://placehold.co/300x200" alt="Cp đôi Thị A & Văn B">
     </div>
 
     <!-- Invitation Section -->
@@ -33,16 +484,17 @@
     </div>
 
     <!-- Bride and Groom Section -->
-    <div class="bride-groom">
+    <div class="bride-groom" style="background-image: url('img/nen1.webp'); /* Thay thế bằng URL hình hoa */
+    background-size: 100% 100%; background-position: center; background-repeat: no-repeat;">
         <div class="profile">
-            <img src="https://placehold.co/150x150" alt="Kim Trinh">
-            <p class="name">Cô dâu: Thị A</p>
-            <p class="introduction">Thị A là một người yêu thích nghệ thuật và có niềm đam mê với hội họa. Cô ấy luôn mang lại niềm vui và sự sáng tạo cho mọi người xung quanh.</p>
+            <img src="https://placehold.co/150x150" alt="Thị A">
+            <h2>Thị A</h2>
+            <p>“Không ngờ được” đó là câu nói tôi hay nói từ khi chúng tôi bắt đầu yêu và giờ thì... chúng tôi kết hôn rồi. Trải qua nhiều biến cố trong chuyện tình cảm chúng tôi khá dè dặt khi lại 1 lần nữa bước chân vào hôn nhân. Và rồi... “Chốt thôi” ♥♥</p>
         </div>
         <div class="profile">
-            <img src="https://placehold.co/150x150" alt="Thanh Tùng">
-            <p class="name">Chú rể: Văn B</p>
-            <p class="introduction">Văn B là một kỹ sư phần mềm với niềm đam mê công nghệ. Anh ấy luôn tìm cách để cải thiện và phát triển bản thân trong mọi lĩnh vực.</p>
+            <img src="https://placehold.co/150x150" alt="Văn B">
+            <h2>Văn B</h2>
+            <p>“Tôi hạnh phúc khi ở bên cô ấy.” Thật sự mà nói chúng tôi đã trải qua nhiều biến cố trong chuyện tình cảm. Quyết định đến với nhau là kết quả cả hai chúng tôi đã phấn đấu vì nhau, thay đổi và bổ trợ cho nhau. Và... Chúng tôi đã về chung 1 nhà. ♥♥</p>
         </div>
     </div>
 
@@ -54,21 +506,21 @@
         <p>Địa chỉ: 123 Đường Y, Quận Z, Thành phố Hồ Chí Minh</p>
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d28120.62935213508!2d105.82036806095147!3d21.028838496849016!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab5d5161f909%3A0x4dafaf500ce22be3!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBOZ2_huqFpIHRoxrDGoW5n!5e0!3m2!1svi!2s!4v1729657601599!5m2!1svi!2s" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
-
+      <div class="gallery-header">
+        <h2 class="gallery-title">KHOẢNH KHẮC NGỌT NGÀO</h2>
+        <p class="gallery-subtitle">Mình cùng bên nhau, những khoảnh khắc thăng hoa của tình yêu! Cảm ơn em đã xuất hiện trong cuộc sống của anh</p>
+    </div>
     <!-- Photo Gallery Section -->
     <div class="photo-gallery">
-        <img src="https://placehold.co/200x200" alt="Ảnh 1">
-        <img src="https://placehold.co/200x200" alt="Ảnh 2">
-        <img src="https://placehold.co/200x200" alt="Ảnh 3">
-        <img src="https://placehold.co/200x200" alt="Ảnh 4">
-        <img src="https://placehold.co/200x200" alt="Ảnh 1">
-        <img src="https://placehold.co/200x200" alt="Ảnh 2">
-        <!-- <img src="https://placehold.co/200x200" alt="Ảnh 3">
-        <img src="https://placehold.co/200x200" alt="Ảnh 4">
-        <img src="https://placehold.co/200x200" alt="Ảnh 1">
-        <img src="https://placehold.co/200x200" alt="Ảnh 2">
-        <img src="https://placehold.co/200x200" alt="Ảnh 3">
-        <img src="https://placehold.co/200x200" alt="Ảnh 4"> -->
+        
+        <img src="https://www.vietnamworks.com/hrinsider/wp-content/uploads/2023/12/hinh-nen-3d-thien-nhien-001.jpg" alt="Ảnh 1">
+        <img src="https://www.vietnamworks.com/hrinsider/wp-content/uploads/2023/12/hinh-nen-3d-thien-nhien-001.jpg" alt="Ảnh 2">
+        <img src="https://www.vietnamworks.com/hrinsider/wp-content/uploads/2023/12/hinh-nen-3d-thien-nhien-001.jpg" alt="Ảnh 3">
+        <img src="https://www.vietnamworks.com/hrinsider/wp-content/uploads/2023/12/hinh-nen-3d-thien-nhien-001.jpg" alt="Ảnh 4">
+        <img src="https://www.vietnamworks.com/hrinsider/wp-content/uploads/2023/12/hinh-nen-3d-thien-nhien-001.jpg" alt="Ảnh 5">
+        <img src="https://www.vietnamworks.com/hrinsider/wp-content/uploads/2023/12/hinh-nen-3d-thien-nhien-001.jpg" alt="Ảnh 6">
+        <img src="https://www.vietnamworks.com/hrinsider/wp-content/uploads/2023/12/hinh-nen-3d-thien-nhien-001.jpg" alt="Ảnh 7">
+        <img src="https://www.vietnamworks.com/hrinsider/wp-content/uploads/2023/12/hinh-nen-3d-thien-nhien-001.jpg" alt="Ảnh 8">
     </div>
 
     <!-- Love Story
@@ -82,7 +534,7 @@
             </div>
             <div class="story">
                 <img src="https://placehold.co/300x200" alt="Câu chuyện 2">
-                <p>Chúng tôi đã cùng nhau trải qua nhiều khoảnh khắc đáng nhớ, từ những buổi hẹn hò ngọt ngào đến những chuyến du lịch thú vị.</p>
+                <p>Chúng tôi đã cùng nhau trải qua nhiều khoảnh khắc đáng nhớ, từ những buổi hẹn hò ngọt ngào đến những chuyến du lịch thú v.</p>
             </div>
         </div>
     </div>
@@ -100,7 +552,7 @@
                 <img src="https://placehold.co/150x150" alt="QR Code Cô Dâu">
             </div>
             <div class="couple-image">
-                <img src="https://placehold.co/300x400" alt="Cô Dâu Chú Rể">
+                <img src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2022/2/5/1001344/Phong-Canh-Quoc-Te-2.jpg" alt="Cô Dâu Chú Rể" style="border-top-left-radius: 48%; border-top-right-radius: 48%;">
             </div>
             <div class="groom">
                 <h3>CHÚ RỂ</h3>
