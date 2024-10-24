@@ -7,7 +7,7 @@ body {
 }
 .header {
     text-align: center;
-    background-image: url('img/nen2.webp'); /* Hình nền */
+    background-image: url('img/nen2.png'); /* Hình nền */
     background-size: cover;
     background-position: center;
     padding: 120px 20px;
