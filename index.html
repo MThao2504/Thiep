@@ -9,7 +9,8 @@
      <link href="img/tải xuống.jfif" rel="icon">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
-<!-- <style>body {
+<!-- <style>
+body {
     font-family: 'Dancing Script', cursive, Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -45,28 +46,55 @@
 .invitation {
     text-align: center;
     padding: 50px 20px;
-    background-color: #fce4e4;
+    background-color: #fdf4f1;
+    border: 1px solid #d47a81;
+    border-radius: 10px;
+    margin: 20px;
 }
+
 .invitation .invite-text {
-    background-color: white;
+    background-color: #fff;
     padding: 30px;
     display: inline-block;
     border-radius: 10px;
     font-size: 20px;
     width: 80%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 .invite-text h2 {
-    color: #d47a81;
+    color: #333;
     font-size: 32px;
     margin-bottom: 10px;
 }
+
 .invite-text p {
     margin: 5px 0;
+    font-size: 18px;
 }
+
 .invite-text .names {
     font-family: 'Great Vibes', cursive;
-    font-size: 28px;
+    font-size: 36px;
     color: #d47a81;
+    margin: 10px 0;
+}
+
+.family-info {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.family h3 {
+    color: #d47a81;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.family p {
+    margin: 0;
+    font-size: 16px;
 }
 
 .bride-groom {
@@ -132,18 +160,84 @@
 }
 
 .wedding-details {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #f9e6e6;
+    display: flex;
+    flex-direction: column; /* Chuyển sang hướng cột cho màn hình nhỏ */
+    align-items: center;
+    padding: 20px;
+    background-color: #fef2f2;
 }
-.wedding-details h2 {
-    color: #d47a81;
-    font-size: 32px;
+
+.event, .timeline {
+    width: 100%; /* Chiều rộng 100% cho màn hình nhỏ */
+    margin-bottom: 20px; /* Thêm khoảng cách giữa các phần */
+}
+
+.event-detail {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center; /* Căn giữa văn bản */
+}
+
+.map iframe {
+    width: 100%; /* Chiều rộng 100% cho iframe */
+    height: auto; /* Chiều cao tự động */
+}
+
+/* Media query cho màn hình lớn hơn */
+@media (min-width: 768px) {
+    .wedding-details {
+        flex-direction: row; /* Chuyển sang hướng hàng cho màn hình lớn */
+        justify-content: space-between;
+    }
+
+    .event, .timeline {
+        width: 48%; /* Chia đều không gian cho hai phần */
+    }
+}
+
+.event {
+    flex: 1;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.wedding-image img {
+    width: 200px;
+    border-radius: 50%;
+}
+
+.timeline {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.event-detail {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
     margin-bottom: 20px;
 }
-.wedding-details p {
+
+.event-detail h3 {
     font-size: 20px;
-    margin: 5px 0;
+    color: red;
+}
+
+.map img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.map a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #007BFF;
 }
 
 .photo-gallery {
@@ -476,20 +570,34 @@
     <div class="invitation">
         <div class="invite-text">
             <h2>TRÂN TRỌNG KÍNH MỜI</h2>
-            <p>Quý vị cùng gia đình thân yêu</p>
-            <p>Đến dự lễ thành hôn của</p>
-            <p class="names">Thị A &#10084; Văn B</p>
-            <p>Vào lúc: 9 giờ 30 phút sáng, thứ ba ngày 14 tháng 3 năm 2023</p>
+            <p><span style="color: red;">Bạn(Anh/Chị)</span> cùng người thân thương</p>
+            <p>TỚI THAM DỰ LỄ THÀNH HÔN CỦA CHÚNG MÌNH</p>
+            <p class="names">Văn B <span style="color: #d47a81;">&#10084;</span> Thị A</p>
+            <p>LỄ THÀNH HÔN ĐƯỢC CỬ HÀNH TẠI TƯ GIA NHÀ TRAI</p>
+            <p>Vào lúc 11 giờ 30, thứ 3, ngày 14, tháng 03, năm 2023</p>
+            <p>(Tại: Cầu Giấy, Hà Nội)</p>
+            <div class="family-info">
+                <div class="family">
+                    <h3>NHÀ TRAI</h3>
+                    <p>Ông: Vũ Đức M</p>
+                    <p>Bà: Trần Thị N</p>
+                </div>
+                <div class="family">
+                    <h3>NHÀ GÁI</h3>
+                    <p>Ông: Vũ Đức M</p>
+                    <p>Bà: Trần Thị D</p>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- Bride and Groom Section -->
-    <div class="bride-groom" style="background-image: url('img/nen1.png'); /* Thay thế bằng URL hình hoa */
+    <div class="bride-groom" style="background-image: url('img/nen1_1.png'); /* Thay thế bằng URL hình hoa */
     background-size: 100% 100%; background-position: center; background-repeat: no-repeat;">
         <div class="profile">
             <img src="https://placehold.co/150x150" alt="Thị A">
             <h2>Thị A</h2>
-            <p>“Không ngờ được” đó là câu nói tôi hay nói từ khi chúng tôi bắt đầu yêu và giờ thì... chúng tôi kết hôn rồi. Trải qua nhiều biến cố trong chuyện tình cảm chúng tôi khá dè dặt khi lại 1 lần nữa bước chân vào hôn nhân. Và rồi... “Chốt thôi” ♥♥</p>
+            <p>“Không ngờ được” đó là câu nói tôi hay nói từ khi chúng tôi bắt đầu yêu và giờ thì... chúng tôi kết hôn rồi. Trải qua nhiều biến cố trong chuyện tình của chúng tôi khá dè dt khi lại 1 lần nữa bước chân vào hôn nhân. Và rồi... “Chốt thôi” ♥♥</p>
         </div>
         <div class="profile">
             <img src="https://placehold.co/150x150" alt="Văn B">
@@ -498,14 +606,8 @@
         </div>
     </div>
 
-    <!-- Wedding Details Section -->
-    <div class="wedding-details">
-        <h2>CHI TIẾT LỄ CƯỚI</h2>
-        <p>Thời gian: 9 giờ 30 phút sáng, thứ ba, ngày 14 tháng 3 năm 2023</p>
-        <p>Địa điểm: Nhà hàng X</p>
-        <p>Địa chỉ: 123 Đường Y, Quận Z, Thành phố Hồ Chí Minh</p>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d28120.62935213508!2d105.82036806095147!3d21.028838496849016!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab5d5161f909%3A0x4dafaf500ce22be3!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBOZ2_huqFpIHRoxrDGoW5n!5e0!3m2!1svi!2s!4v1729657601599!5m2!1svi!2s" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
+   
+    
       <div class="gallery-header">
         <h2 class="gallery-title">KHOẢNH KHẮC NGỌT NGÀO</h2>
         <p class="gallery-subtitle">Mình cùng bên nhau, những khoảnh khắc thăng hoa của tình yêu! Cảm ơn em đã xuất hiện trong cuộc sống của anh</p>
@@ -538,7 +640,35 @@
             </div>
         </div>
     </div>
-
+    <div class="wedding-details">
+        <div class="event">
+            <h2>Chúng mình cưới</h2>
+            <p>Một lời chúc của bạn chắc chắn sẽ làm cho đám cưới của chúng tôi có thêm một niềm hạnh phúc</p>
+            <div class="wedding-image">
+                <img src="img/nen1_1.png" alt="Wedding Couple" />
+            </div>
+        </div>
+        
+        <div class="timeline">
+            <div class="event-detail">
+                <h3>11h 30 phút: Lễ Thành Hôn</h3>
+                <p>Tổ chức tại tư gia nhà gái</p>
+                <p>Đ/c: Hoàn Kiếm, Hà Nội</p>
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14897.010915663022!2d105.78274009413046!3d21.022571369574326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab5071d33a85%3A0x11b2ab7b4c1f1b61!2zWcOqbiBIb8OgLCBD4bqndSBHaeG6pXksIEjDoCBO4buZaSwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1729752030854!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+    
+            <div class="event-detail">
+                <h3>9h 30 phút: Rước Dâu</h3>
+                <p>Tổ chức tại tư gia nhà trai</p>
+                <p>Đ/c: Cầu Giấy, Hà Nội</p>
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14897.010915663022!2d105.78274009413046!3d21.022571369574326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab5071d33a85%3A0x11b2ab7b4c1f1b61!2zWcOqbiBIb8OgLCBD4bqndSBHaeG6pXksIEjDoCBO4buZaSwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1729752030854!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Footer Section -->
     <div class="footer">
         <h2>GỬI LỜI CHÚC ĐẾN CÔ DÂU CHÚ RỂ</h2>
